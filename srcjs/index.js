@@ -1,9 +1,5 @@
-// Added by apply_react
-
 import React from 'react';
-import ReactDOM from 'react-dom';
-// Added by apply_react
-
+import {createRoot } from 'react-dom/client';
 import 'shiny';
 
 Shiny.addCustomMessageHandler('ask-alert', (msg) => {
@@ -11,10 +7,10 @@ Shiny.addCustomMessageHandler('ask-alert', (msg) => {
   Shiny.setInputValue('askResponse', response);
 });
 
-
 const title = 'Shiny powered by React!';
 
-ReactDOM.render(
-  <div>{title}</div>,
+createRoot(
   document.getElementById('app')
+).render(
+  <div>{title}</div>
 );
