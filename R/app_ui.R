@@ -5,6 +5,11 @@
 #' @import shiny
 #' @noRd
 app_ui <- function(request) {
+  add_resource_path(
+    "www",
+    app_sys("app/www")
+  )
+
   fluidPage(
     h1("reaction"),
     tagList(
